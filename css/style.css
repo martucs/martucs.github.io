@@ -18,21 +18,25 @@ body {
   margin-right: 1%;
 }
 
+
+
 nav {
     background-color: #202020c1;
-    /* padding: 8px 0; espacio entre los elementos de la navbar y el recuadro  */
     margin-left: -1%;
     margin-right: -1%;
-    padding: 8px 1%;   /* keeps text aligned with the rest */
+    padding: 8px 1%;   /* espacio entre los elementos de la navbar y el recuadro */
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
   }
   
   .navbar {
-    list-style: none; /* me quita los puntos de los elementos*/
+    list-style: none; /* quita los puntos de los elementos*/
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
-    gap: 30px;               /* space between items */
+    gap: 30px;               
 
   }
   
@@ -58,7 +62,6 @@ nav {
   
   .hero h1 {
     position: absolute;
-    /* top: 0%;       distance from top of image */
     left: 30%;     /*  distance from left of image*/
     right: 1%;
     margin: 0;
@@ -92,38 +95,30 @@ section h2 {
   border-bottom: 1px solid wheat;
 }
 
-
-
-/* ===== Directors of Photography ===== */
-.dops-section {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  /* keep same text color as body */
+/* la SECCION DOP ENTERA*/
+#directors-of-photography {
+  max-width: 85%;  
+  margin: 0 auto;     /* centers */
 }
 
-/* Part A: profile (two column: text | image) */
-.dop-profile {
-  display: flex;               /* flex for two columns */
+
+.dop-box {
+  display: flex;             
   gap: 20px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;            /* allows columns to stack on small screens */
-  margin-bottom: 28px;
 }
 
-/* left text column */
+
 .dop-text {
-  flex: 1 1 360px;            /* grow, shrink, base width 360px */
-  min-width: 260px;
+  /* flex: 1 1 0px;            /* grow, shrink, base width 360px */
+  /*min-width: 0px; */
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  font-weight: bold;
 }
-
-/* .dop-text h2 {
-  text-align: center;
-  font-size: 4vw;
-  border-bottom: 1px solid wheat;
-  padding-bottom: 15px;
-  border-width: 70%;
-} */
 
 /* name + quote */
 .dop-name {
@@ -131,29 +126,44 @@ section h2 {
   font-family: ZT-medium-font;
   font-size: 1.4rem;
 }
+
 .dop-quote {
-  margin: 0 0 10px 0;
-  opacity: 0.9;
-  padding-left: 12px;
+  color:wheat;
+  font-weight: bold;
+  width:auto;
 }
 
-/* right image column */
-.dop-figure {
-  flex: 0 0 320px;            /* fixed-ish width, but will shrink */
-  max-width: 40%;
-  text-align: center;
+.dop-short {
+  font-size: large;
+  /* flex: 1;          takes the remaining space */
+  max-width: 600px; /* optional, sets readable width */
+  color: aliceblue;
 }
-.dop-profile-image {
+ 
+
+.dop-figure {
+  flex: 0 0 0;            /* fixed-ish width, but will shrink */
+  max-width: 50%;
+  text-align: center;
+  font-size: small;
+}
+
+.dop-figure figcaption {
+  font-weight:normal;
+}
+
+/* .dop-box-image {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 6px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.6);
-}
+} */
 
 /* Part B: gallery grid of cards (3 columns -> responsive) */
 .dop-gallery {
   display: grid;
+  background-color: #202020c1;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns on wide screens */
   gap: 18px;
   align-items: start;
@@ -161,7 +171,6 @@ section h2 {
 
 /* each card */
 .dop-card {
-  background: rgba(30,30,30,0.3);
   padding: 8px;
   border-radius: 6px;
   text-align: center;
@@ -176,31 +185,6 @@ section h2 {
   margin-top: 8px;
   font-size: 0.95rem;
 }
-
-/* ===== Responsive tweaks ===== */
-@media (max-width: 900px) {
-  .dop-gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
-  .dop-figure { max-width: 45%; flex-basis: 45%; }
-}
-
-@media (max-width: 560px) {
-  .dop-profile {
-    flex-direction: column; /* stack image below text */
-    text-align: left;
-  }
-  .dop-figure {
-    max-width: 100%;
-    flex-basis: 100%;
-    margin-top: 12px;
-  }
-  .dop-gallery {
-    grid-template-columns: 1fr; /* single column gallery on small screens */
-  }
-}
-
-
 
 
   footer {
