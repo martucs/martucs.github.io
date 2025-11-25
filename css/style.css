@@ -19,16 +19,16 @@ body {
 }
 
 
-
 nav {
-    background-color: #202020c1;
-    margin-left: -1%;
-    margin-right: -1%;
-    padding: 8px 1%;   /* espacio entre los elementos de la navbar y el recuadro */
-    position: sticky;
-    top: 0;
-    z-index: 1000; 
-  }
+  background-color: #202020c1;
+  margin-left: -1%;
+  margin-right: -1%;
+  padding: 8px 1%;
+  /* espacio entre los elementos de la navbar y el recuadro */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
   
   .navbar {
     list-style: none; /* quita los puntos de los elementos*/
@@ -83,6 +83,15 @@ nav {
     display: block; /*evitamos espacios debajo de la imagen*/
   }
 
+section {
+  max-width: 80%;  
+  margin: 0 auto;     /* centers */
+  scroll-margin-top: 70px; /*deja un margen de x px al hacer scroll en esa seccion*/
+}
+
+#introduction {
+  max-width: 100%;  
+}
 
 /* ALL SECTION TITLES*/
 section h2 {  
@@ -90,17 +99,10 @@ section h2 {
   text-align: center;
   font-size: clamp(32px, 5vw, 64px); /* responsive but not huge on big screens */
   margin-top: 40px;
-  margin-bottom: 20px; /* <-- distance between title and the bottom border */
-  padding-bottom: 10px; /* <-- space between text and underline */
+  margin-bottom: 20px; /*  distance between title and the bottom border */
+  padding-bottom: 10px; /*  space between text and underline */
   border-bottom: 1px solid wheat;
 }
-
-/* la SECCION DOP ENTERA*/
-#directors-of-photography {
-  max-width: 85%;  
-  margin: 0 auto;     /* centers */
-}
-
 
 .dop-box {
   display: flex;             
@@ -110,9 +112,8 @@ section h2 {
   flex-wrap: wrap;            /* allows columns to stack on small screens */
 }
 
-
 .dop-text {
-  /* flex: 1 1 0px;            /* grow, shrink, base width 360px */
+  /* flex: 1 1 0px;            
   /*min-width: 0px; */
   display: flex;
   gap: 30px;
@@ -120,11 +121,10 @@ section h2 {
   font-weight: bold;
 }
 
-/* name + quote */
 .dop-name {
   margin: 6px 0 10px 0;
   font-family: ZT-medium-font;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .dop-quote {
@@ -135,12 +135,11 @@ section h2 {
 
 .dop-short {
   font-size: large;
-  /* flex: 1;          takes the remaining space */
-  max-width: 600px; /* optional, sets readable width */
+  /* flex: 1; */
+  /* max-width: 600px;  */
   color: aliceblue;
 }
  
-
 .dop-figure {
   flex: 0 0 0;            /* fixed-ish width, but will shrink */
   max-width: 50%;
@@ -152,15 +151,7 @@ section h2 {
   font-weight:normal;
 }
 
-/* .dop-box-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
-} */
 
-/* Part B: gallery grid of cards (3 columns -> responsive) */
 .dop-gallery {
   display: grid;
   background-color: #202020c1;
@@ -169,7 +160,6 @@ section h2 {
   align-items: start;
 }
 
-/* each card */
 .dop-card {
   padding: 8px;
   border-radius: 6px;
@@ -181,6 +171,7 @@ section h2 {
   display: block;
   border-radius: 4px;
 }
+
 .dop-card figcaption {
   margin-top: 8px;
   font-size: 0.95rem;
