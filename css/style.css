@@ -1,0 +1,215 @@
+
+@font-face {
+  font-family: ZT-font;
+  src: url('../fonts/ZTNature-Thin.ttf');
+}
+
+@font-face {
+  font-family: ZT-medium-font;
+  src: url('../fonts/ZTNature-Medium.ttf');
+}
+
+body {
+  background-color: black;
+  color:aliceblue;
+  font-family: ZT-font;
+  letter-spacing: 1px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+nav {
+    background-color: #202020c1;
+    /* padding: 8px 0; espacio entre los elementos de la navbar y el recuadro  */
+    margin-left: -1%;
+    margin-right: -1%;
+    padding: 8px 1%;   /* keeps text aligned with the rest */
+  }
+  
+  .navbar {
+    list-style: none; /* me quita los puntos de los elementos*/
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 30px;               /* space between items */
+
+  }
+  
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;          /* makes the whole area clickable */
+  }
+  
+  .navbar li a:hover {
+    background-color: #333333;
+    color: wheat;
+    border-radius: 6px;     /*redondea los bordes when hovering*/
+  }
+
+  .hero {
+    position: relative;
+    text-align: right;
+  }
+  
+  .hero h1 {
+    position: absolute;
+    /* top: 0%;       distance from top of image */
+    left: 30%;     /*  distance from left of image*/
+    right: 1%;
+    margin: 0;
+    font-size: 7vw;
+    font-family: ZT-medium-font;
+    color: white;
+    z-index: 4;
+    text-align: right;
+  }
+  
+  .hero p {
+    text-align: left;    
+    margin-top: 20px;     /* space below image */
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto; /*se adapta al resto de la pagina (si fuese 100vh se estiraria hasta rellenar la pagina*/
+    display: block; /*evitamos espacios debajo de la imagen*/
+  }
+
+
+/* ALL SECTION TITLES*/
+section h2 {  
+  /* font-family: ZT-medium-font; */
+  text-align: center;
+  font-size: clamp(32px, 5vw, 64px); /* responsive but not huge on big screens */
+  margin-top: 40px;
+  margin-bottom: 20px; /* <-- distance between title and the bottom border */
+  padding-bottom: 10px; /* <-- space between text and underline */
+  border-bottom: 1px solid wheat;
+}
+
+
+
+/* ===== Directors of Photography ===== */
+.dops-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  /* keep same text color as body */
+}
+
+/* Part A: profile (two column: text | image) */
+.dop-profile {
+  display: flex;               /* flex for two columns */
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;            /* allows columns to stack on small screens */
+  margin-bottom: 28px;
+}
+
+/* left text column */
+.dop-text {
+  flex: 1 1 360px;            /* grow, shrink, base width 360px */
+  min-width: 260px;
+}
+
+/* .dop-text h2 {
+  text-align: center;
+  font-size: 4vw;
+  border-bottom: 1px solid wheat;
+  padding-bottom: 15px;
+  border-width: 70%;
+} */
+
+/* name + quote */
+.dop-name {
+  margin: 6px 0 10px 0;
+  font-family: ZT-medium-font;
+  font-size: 1.4rem;
+}
+.dop-quote {
+  margin: 0 0 10px 0;
+  opacity: 0.9;
+  padding-left: 12px;
+}
+
+/* right image column */
+.dop-figure {
+  flex: 0 0 320px;            /* fixed-ish width, but will shrink */
+  max-width: 40%;
+  text-align: center;
+}
+.dop-profile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+/* Part B: gallery grid of cards (3 columns -> responsive) */
+.dop-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns on wide screens */
+  gap: 18px;
+  align-items: start;
+}
+
+/* each card */
+.dop-card {
+  background: rgba(30,30,30,0.3);
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+.dop-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+.dop-card figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 900px) {
+  .dop-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+  .dop-figure { max-width: 45%; flex-basis: 45%; }
+}
+
+@media (max-width: 560px) {
+  .dop-profile {
+    flex-direction: column; /* stack image below text */
+    text-align: left;
+  }
+  .dop-figure {
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-top: 12px;
+  }
+  .dop-gallery {
+    grid-template-columns: 1fr; /* single column gallery on small screens */
+  }
+}
+
+
+
+
+  footer {
+    color:wheat;
+    text-align: right;
+    background-color: #202020c1;
+
+    margin-left: -1%;
+    margin-right: -1%;
+    padding: 8px 1%;   /* keeps text aligned with the rest */
+  }
+  
