@@ -107,19 +107,17 @@ section h2 {
 .dop-box {
   display: flex;             
   gap: 20px;
-  align-items: center;
   justify-content: flex-start;
-  flex-wrap: wrap;            /* allows columns to stack on small screens */
 }
 
-.dop-text {
-  /* flex: 1 1 0px;            
-  /*min-width: 0px; */
+/*.dop-text {
+  // flex: 1 1 0px;       
+  //min-width: 0px; 
   display: flex;
   gap: 30px;
   align-items: flex-start;
   font-weight: bold;
-}
+}*/
 
 .dop-name {
   margin: 6px 0 10px 0;
@@ -130,22 +128,30 @@ section h2 {
 .dop-quote {
   color:wheat;
   font-weight: bold;
-  width:auto;
+  font-size: large;
+  width: 50%;
 }
 
 .dop-short {
   font-size: large;
+  flex-grow: 1;
   /* flex: 1; */
   /* max-width: 600px;  */
   color: aliceblue;
+  align-content: center;
+  line-height:2vi;
 }
  
 .dop-figure {
-  flex: 0 0 0;            /* fixed-ish width, but will shrink */
-  max-width: 30%;
+  /*flex: 0 0 0;            /* fixed-ish width, but will shrink */
+  /*max-width: 30%;*/
   text-align: center;
   font-size: small;
+    margin-top: 15px;
+  margin-inline: 15px 15px;
+
 }
+
 
 .dop-figure figcaption {
   font-weight:normal;
@@ -154,27 +160,33 @@ section h2 {
 
 .dop-gallery {
   display: grid;
-  background-color: #2e2e2ec1;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns on wide screens */
-  gap: 18px;
-  align-items: start;
+ /* background-color: #2e2e2ec1;*/
+  grid-template-columns: repeat(1, 1fr); /* 3 equal columns on wide screens */
+  gap: 10px;
+  align-items: center;
 }
 
 .dop-card {
-  padding: 8px;
+  /*padding: 0px;*/
   border-radius: 6px;
   text-align: center;
+  margin-top: 15px;
+  margin-inline: 15px 15px;
+  background-color: #2e2e2ec1;
+
 }
 .dop-card img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
+ 
 }
 
 .dop-card figcaption {
   margin-top: 8px;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+   margin-bottom: 8px;
 }
 
 
