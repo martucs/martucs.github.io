@@ -32,8 +32,9 @@ nav {
   
   .navbar {
     list-style: none; /* quita los puntos de los elementos*/
-    display: flex;
-    justify-content: center;
+    display: flex; /*by default is in horizontal direction */
+    justify-content: center; 
+    align-items: center;
     margin: 0;
     padding: 0;
     gap: 30px;               
@@ -76,17 +77,28 @@ nav {
     text-align: left;    
     margin-top: 20px;     /* space below image */
   }
-  
+  .hero h3 {
+    background-color:#2e2e2ec1;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: clamp(14px, 3vw, 22px);
+    /* margin-left: 50%; */
+  }
+
   .hero-image {
     width: 100%;
     height: auto; /*se adapta al resto de la pagina (si fuese 100vh se estiraria hasta rellenar la pagina*/
     display: block; /*evitamos espacios debajo de la imagen*/
+    
   }
 
 section {
   max-width: 80%;  
   margin: 0 auto;     /* centers */
-  scroll-margin-top: 70px; /*deja un margen de x px al hacer scroll en esa seccion*/
+  scroll-margin-top: 60px; /*deja un margen de x px al hacer scroll en esa seccion*/
 }
 
 #home {
@@ -122,34 +134,45 @@ section h2 {
 .dop-name {
   margin: 6px 0 10px 0;
   font-family: ZT-medium-font;
-  font-size: 1.8rem;
+  /* font-size: 1.8rem; */
+  font-size: clamp(18px, 2.5vw, 32px);
 }
 
 .dop-quote {
   color:wheat;
   font-weight: bold;
-  font-size: large;
+  /* font-size: large; */
+  font-size: clamp(14px, 2vw, 20px);
   width: 50%;
 }
 
 .dop-short {
-  font-size: large;
+  /* font-size: large; */
   flex-grow: 1;
   /* flex: 1; */
   /* max-width: 600px;  */
   color: aliceblue;
   align-content: center;
-  line-height:2vi;
+  /* line-height:2vi; */
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 1.6;
 }
  
 .dop-figure {
   /*flex: 0 0 0;            /* fixed-ish width, but will shrink */
   /*max-width: 30%;*/
+  flex: 0 1 90%;   /* allow shrinking and set a reasonable base width */
   text-align: center;
   font-size: small;
     margin-top: 15px;
   margin-inline: 15px 15px;
+  filter: grayscale(100%);
+}
 
+.dop-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 
@@ -161,9 +184,11 @@ section h2 {
 .dop-gallery {
   display: grid;
  /* background-color: #2e2e2ec1;*/
-  grid-template-columns: repeat(1, 1fr); /* 3 equal columns on wide screens */
-  gap: 10px;
+  /* grid-template-columns: repeat(1, 1fr); */
+  gap: 8px;
   align-items: center;
+  max-width: 80%;
+  margin: 0 auto; /*me centra todo*/
 }
 
 .dop-card {

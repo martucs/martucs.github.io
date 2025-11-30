@@ -1,20 +1,25 @@
-// guardamos todos los <a> links del <nav>
-const navLinks = document.querySelectorAll("nav a");
+/* esperamos a que la pagina este cargada */
+document.addEventListener("DOMContentLoaded", function(){
 
-for (let i = 0; i < navLinks.length; i++) {
+  // guardamos todos los <a> links del <nav>
+  const navLinks = document.querySelectorAll("nav a");
 
-  navLinks[i].addEventListener("click", function(event) {
+  for (let i = 0; i < navLinks.length; i++) {
 
-    event.preventDefault(); // prq el default va directo al link
-    const sectionId = this.getAttribute("href");
-    const sectionElement = document.querySelector(sectionId); // find the section element
+    navLinks[i].addEventListener("click", function (event) {
 
-    console.log("Clicked navbar link:", this.textContent);
+      event.preventDefault(); // prq el default va directo al link
+      const sectionId = this.getAttribute("href");
+      const sectionElement = document.querySelector(sectionId); // find the section element
 
-    if (sectionElement) {
-      sectionElement.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
-}
+      console.log("Clicked navbar link:", this.textContent);
+
+      if (sectionElement) {
+        sectionElement.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  }
+  
+});
